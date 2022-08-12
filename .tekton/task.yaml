@@ -6,10 +6,10 @@ spec:
   params:
     - name: repository
       description: the git repository
-    - name: AT1
-      description: the activity tracker
-    - name: crn
-      description: the cos crn
+    - name: sshkey
+      description: the sshkey
+    - name: resourcegroup
+      description: the resource group
     - name: revision
       description: the revision
       default: main
@@ -30,10 +30,10 @@ spec:
       env:
         - name: repository
           value: $(params.repository)
-        - name: AT1
-          value: $(params.AT1)
-        - name: crn
-          value: $(params.crn)
+        - name: resourcegroup
+          value: $(params.resourcegroup)
+        - name: sshkey
+          value: $(params.sshkey)
         - name: REVISION
           value: $(params.revision)
       command: ["/bin/sh", "-c"]
