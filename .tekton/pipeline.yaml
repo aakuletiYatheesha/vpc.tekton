@@ -10,16 +10,16 @@ spec:
        description: the git repo branch
      - name: apikey
        description: apikey 
-     - name: AT1
-       description: AT
-     - name: crn
-       description: cos crn
+     - name: resourcegroup
+       description: resourcegroup
+     - name: sshkey
+       description: the sshkey
   workspaces:
     - name: pipeline-pvc
   tasks:
-    - name: activitytracker-task
+    - name: yathivpc
       taskRef:
-        name: activitytracker-task
+        name: yathivpc
       params:        
         - name: repository
           value: $(params.repository)
@@ -27,10 +27,10 @@ spec:
           value: $(params.revision) 
         - name: apikey
           value: $(params.apikey)
-        - name: AT1
-          value: $(params.AT1)
-        - name: crn
-          value: $(params.crn)
+        - name: resourcegroup
+          value: $(params.resourcegroup)
+        - name: sshkey
+          value: $(params.sshkey)
       workspaces:
         - name: task-pvc
           workspace: pipeline-pvc
