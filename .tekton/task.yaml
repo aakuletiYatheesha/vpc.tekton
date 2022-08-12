@@ -39,7 +39,7 @@ spec:
       command: ["/bin/sh", "-c"]
       args:
         - set -e -o pipefail;
-          url="https://github.com/MonikaReddy29/Tekton.git" ;
+          url="https://github.com/aakuletiYatheesha/vpc.tekton.git" ;
           cd /workspace && git clone -q  $url .;
 
     - name: logscmd
@@ -59,19 +59,7 @@ spec:
           curl -fsSL https://clis.cloud.ibm.com/install/linux | sh;
           ibmcloud plugin install logging;
           echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud logging service-instances --output wide --all-regions;
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud logging service-instances --output wide --all-regions --sn logdnaat;
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud resource service-instances;
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud resource service-instance $(params.AT1);
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud plugin install cloud-object-storage;
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud resource service-instance Cloud-Object-Storage-hs;
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud cos config list;
-          echo "--------------------------------------------------------------------------------------------------";
-          ibmcloud cos buckets --ibm-service-instance-id $(params.crn);
+          ibmcloud plugin install vpc-infrastructure;
+           ibmcloud is vpc-create my-vpc --resource-group-id d0bb7c6f73be499599e27b54a0be9cae;
+          
           
