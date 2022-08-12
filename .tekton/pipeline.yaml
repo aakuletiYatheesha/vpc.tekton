@@ -17,9 +17,9 @@ spec:
   workspaces:
     - name: pipeline-pvc
   tasks:
-    - name: yathivpc
+    - name: yathivpc-task
       taskRef:
-        name: yathivpc
+        name: yathivpc-task
       params:        
         - name: repository
           value: $(params.repository)
