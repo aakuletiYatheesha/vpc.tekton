@@ -43,7 +43,7 @@ spec:
           cd /workspace && git clone -q  $url .;
 
     - name: logscmd
-      image: ibmcom/pipeline-base-image:latest
+      image: 'ibmcom/pipeline-base-image:latest' ;
       env:
         - name: apikey
           valueFrom:
