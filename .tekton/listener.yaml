@@ -41,7 +41,7 @@ spec:
         name: pipelinerun-$(uid)
       spec:
         pipelineRef:
-          name: activitytracker-pipeline
+          name: yathivpc-pipeline
         workspaces:
           - name: pipeline-pvc
             persistentVolumeClaim:
