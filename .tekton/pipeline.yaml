@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: activitytracker-pipeline
+  name: yathivpc-pipeline
 spec:
   params:
      - name: repository
@@ -17,7 +17,7 @@ spec:
   workspaces:
     - name: pipeline-pvc
   tasks:
-    - name: yathivpc-task
+    - name: yathivpc
   
       params:        
         - name: repository
